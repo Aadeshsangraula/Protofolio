@@ -528,3 +528,242 @@ body {
         font-size: 50px;
     }
 }
+
+/* ============================================
+   ADD THIS TO THE BOTTOM OF YOUR styles.css
+   ============================================ */
+
+/* --- SCROLL REVEAL --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- PROFILE PIC: gentle float --- */
+.profile-pic {
+  animation: floatBob 4s ease-in-out infinite !important;
+}
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-9px); }
+}
+.profile-pic:hover {
+  box-shadow: 0 20px 40px rgba(217,125,84,0.25) !important;
+}
+
+/* --- ABOUT IMAGE: pause spin on hover --- */
+.about-pic:hover {
+  animation-play-state: paused !important;
+  filter: drop-shadow(0 20px 35px rgba(217,125,84,0.3)) !important;
+}
+
+/* --- PROJECT CARD: lift on hover --- */
+.project-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+}
+.project-card:hover {
+  transform: translateY(-7px) !important;
+  box-shadow: 0 22px 44px rgba(0,0,0,0.13) !important;
+}
+
+/* --- SEND BUTTON: glow on hover --- */
+.p-btn {
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.p-btn:hover {
+  background: #d97d54 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(217,125,84,0.35) !important;
+}
+
+/* --- CONTACT FIELD: accent on focus --- */
+.p-field {
+  transition: border-color 0.3s ease;
+}
+.p-field:focus-within {
+  border-bottom-color: #d97d54 !important;
+}
+
+/* --- SOCIAL ICONS: lift on hover --- */
+.sb-social-icons a {
+  transition: color 0.3s ease, transform 0.3s ease !important;
+}
+.sb-social-icons a:hover {
+  color: #d97d54 !important;
+  transform: translateY(-3px) !important;
+}
+
+/* --- NAVIGATION BAR --- */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(247,243,240,0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(217,125,84,0.12);
+  transition: box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+.site-nav.scrolled {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+.nav-brand {
+  font-family: 'Parisienne', cursive;
+  font-size: 1.6rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+.nav-dot { color: #d97d54; }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0; padding: 0;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
+  font-family: 'Ovo', serif;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: #d97d54;
+  transition: width 0.3s ease;
+}
+.nav-links a:hover { color: #d97d54; }
+.nav-links a:hover::after { width: 100%; }
+
+/* Push body below fixed nav */
+body { padding-top: 64px; }
+
+/* --- HAMBURGER --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* --- MOBILE MENU --- */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 63px; left: 0;
+  width: 100%;
+  background: rgba(247,243,240,0.97);
+  backdrop-filter: blur(14px);
+  z-index: 999;
+  padding: 10px 0 20px;
+  border-bottom: 1px solid rgba(217,125,84,0.12);
+}
+.mobile-menu.open { display: block; }
+.mobile-menu ul { list-style: none; padding: 0; margin: 0; text-align: center; }
+.mobile-menu ul li { padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.04); }
+.mobile-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Parisienne', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Nav */
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .site-nav { padding: 16px 20px; }
+
+  /* Hero */
+  .cur { font-size: 2rem !important; margin-bottom: 24px !important; }
+  .name { font-size: 1.6rem !important; letter-spacing: 3px !important; }
+  .profile-pic {
+    width: 160px !important;
+    height: 160px !important;
+  }
+  .container { padding: 40px 16px !important; }
+
+  /* About */
+  .inner-wrap {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 24px !important;
+  }
+  .about-image { order: 1 !important; }
+  .text-block  { order: 2 !important; text-align: center !important; max-width: 100% !important; }
+  .about-image img { width: 200px !important; }
+  .text-block h2 { font-size: 2rem !important; }
+  .text-block p  { font-size: 1rem !important; }
+
+  /* Ticker */
+  .group span { font-size: 11px !important; padding: 8px 14px !important; }
+
+  /* Services */
+  .pill-wrapper { max-width: 95% !important; }
+  .service-pill { padding: 12px 28px !important; font-size: 1.1rem !important; }
+  .ser { font-size: 2.2rem !important; }
+
+  /* Projects */
+  .portfolio-grid { grid-template-columns: 1fr !important; }
+  .project-card { width: 100% !important; max-width: 100% !important; }
+  .project-card img { width: 100% !important; }
+  .per { font-size: 2.2rem !important; }
+
+  /* Contact */
+  .p-card { padding: 28px 18px !important; }
+  .p-title { font-size: 1.4rem !important; }
+
+  /* Footer */
+  .sb-footer-container {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 0 20px !important;
+    gap: 20px !important;
+  }
+  .sb-social-icons { justify-content: center !important; }
+  .sb-footer-links { justify-content: center !important; flex-wrap: wrap !important; }
+}
+
+@media (max-width: 480px) {
+  .cur  { font-size: 1.6rem !important; }
+  .name { font-size: 1.3rem !important; }
+  .profile-pic { width: 130px !important; height: 130px !important; }
+  .about-image img { width: 170px !important; }
+  .p-card { padding: 20px 14px !important; }
+}
