@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -205,6 +205,284 @@
         </div>
     </div>
 </footer>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Binisha Poudel</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ovo&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ===== NAVIGATION (NEW - added on top) ===== -->
+<nav class="site-nav" id="navbar">
+  <a href="#" class="nav-brand">Binisha<span class="nav-dot">.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#about" class="mobile-link">About</a></li>
+    <li><a href="#projects" class="mobile-link">Work</a></li>
+    <li><a href="#services" class="mobile-link">Services</a></li>
+    <li><a href="#contact" class="mobile-link">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ===== HERO (YOUR ORIGINAL) ===== -->
+<div class="container reveal">
+    <h1 class="cur">Welcome to my Portfolio.</h1>
+    <img src="photos/profile.jpg" class="profile-pic" alt="Binisha Poudel">
+    <div class="name">Website Developer</div>
+</div>
+
+<!-- ===== TICKER (YOUR ORIGINAL) ===== -->
+<div class="ticker">
+ <div class="track">
+ <div class="group">
+ <span>DEVELOPER</span>
+ <span>DESIGNER</span>
+ <span>GEN AI</span>
+ <span>PROMPT ENGINEER</span>
+  <span>WORDPRESS</span>
+<span>ANIMATOR</span>
+ <span>DEBUGGING</span>
+</div>
+<div class="group">
+<span>DEVELOPER</span>
+<span>DESIGNER</span>
+ <span>GEN AI</span>
+<span>PROMPT ENGINEER</span>
+  <span>WORDPRESS</span>
+  <span>ANIMATOR</span>
+<span>DEBUGGING</span>
+    </div>
+<div class="group">
+<span>DEVELOPER</span>
+<span>DESIGNER</span>
+ <span>GEN AI</span>
+<span>PROMPT ENGINEER</span>
+  <span>WORDPRESS</span>
+  <span>ANIMATOR</span>
+<span>DEBUGGING</span>
+    </div>
+    <div class="group">
+      <span>DEVELOPER</span>
+ <span>DESIGNER</span>
+ <span>GEN AI</span>
+ <span>PROMPT ENGINEER</span>
+   <span>WORDPRESS</span>
+ <span>ANIMATOR</span>
+ <span>DEBUGGING</span>
+ </div>
+</div>
+</div>
+
+<!-- ===== ABOUT (YOUR ORIGINAL) ===== -->
+<section id="about" class="about-section">
+  <div class="glow-paper" id="aboutCard">
+    <div class="fiber-overlay"></div>
+    <div class="inner-wrap reveal">
+      <div class="about-image">
+        <img src="photos/about.png" class="about-pic" alt="Profile">
+      </div>
+      <div class="text-block">
+        <div class="top-row">
+          <div class="headings">
+            <h2>About Me</h2>
+          </div>
+        </div>
+        <p>
+          Hi, I'm <strong>Binisha Poudel</strong>. 
+          A web developer working at the intersection of design and development, creating engaging experiences that function seamlessly in real-world.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS (YOUR ORIGINAL) ===== -->
+<section id="projects" class="project-section">
+  <div class="container">
+    <h1 class="per reveal">Project showcase</h1> 
+    <div class="portfolio-grid">
+      <div class="project-card reveal">
+        <img src="photos/prj.png" width="400" height="200" class="project-pic">
+        <div class="overlay">
+          <h3>Meditation Site</h3>
+          <p>A simple meditation website with guided sessions, breathing exercises, Mood Tracker.</p>
+          <button class="view-btn">↗</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES (YOUR ORIGINAL) ===== -->
+<div id="services" class="container reveal">
+    <h1 class="ser">services</h1>
+    <div class="pill-wrapper">
+        <span class="service-pill pill-1 logo-text">LoGo</span>
+        <span class="service-pill pill-2">Web design</span>
+        <span class="service-pill pill-3">Landing pages</span>
+        <span class="service-pill pill-4">e-commerce site</span>
+        <span class="service-pill pill-5">ai powered websites</span>
+    </div>
+</div>
+
+<!-- ===== CONTACT (YOUR ORIGINAL + EmailJS) ===== -->
+<section id="contact" class="p-contact-section">
+    <div class="p-card reveal">
+        <div class="p-left">
+            <h2 class="p-title">Let's scale your brand, together.</h2>
+            <p class="p-contact-sub">
+                Reach out at <a href="mailto:contactbinisha@gmail.com">contactbinisha@gmail.com</a>
+            </p>
+        </div>
+        <form class="p-form" id="contact-form">
+            <div class="p-field">
+                <label>Name *</label>
+                <input type="text" name="name" placeholder="Type name" required>
+            </div>
+            <div class="p-field">
+                <label>Email *</label>
+                <input type="email" name="email" placeholder="Type email" required>
+            </div>
+            <div class="p-field">
+                <label>How can I help? *</label>
+                <textarea name="message" placeholder="Tell me about your project" rows="2" required></textarea>
+            </div>
+            <div class="p-services">
+                <div class="p-checkboxes">
+                    <label><input type="checkbox" name="service" value="UI/UX Design"> UI/UX Design</label>
+                    <label><input type="checkbox" name="service" value="Web Dev"> Web Dev</label>
+                    <label><input type="checkbox" name="service" value="AI Solutions"> AI Solutions</label>
+                </div>
+            </div>
+            <button type="submit" class="p-btn">Send Message</button>
+            <p id="form-status" style="margin-top:12px; text-align:center; font-family:'Parisienne',cursive; font-size:1rem;"></p>
+        </form>
+    </div>
+</section>
+
+<!-- ===== FOOTER (YOUR ORIGINAL) ===== -->
+<footer class="sb-portfolio-footer">
+    <div class="sb-footer-container">
+        <div class="sb-footer-brand">
+            <span class="sb-footer-name">Binisha Poudel<span class="sb-dot">.</span></span>
+            <p class="sb-footer-tagline">Building digital experiences.</p>
+        </div>
+        <div class="sb-footer-nav">
+            <ul class="sb-footer-links">
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <p class="sb-footer-copy">&copy; 2026 Crafted with 🖤</p>
+        </div>
+        <div class="sb-footer-social">
+            <div class="sb-social-icons">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <a href="mailto:contactbinisha@gmail.com" class="sb-footer-mail">contactbinisha@gmail.com</a>
+        </div>
+    </div>
+</footer>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+// ===== TICKER OPTIMIZE (YOUR ORIGINAL) =====
+function optimizeTrack() {
+  const track = document.querySelector('.track');
+  const groups = document.querySelectorAll('.group');
+  if (groups.length > 0) {
+    const groupWidth = groups[0].offsetWidth;
+    track.style.width = (groupWidth * 2) + 'px';
+  }
+}
+window.addEventListener('load', optimizeTrack);
+window.addEventListener('resize', optimizeTrack);
+
+// ===== EMAILJS =====
+emailjs.init("YOUR_PUBLIC_KEY");
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const status = document.getElementById("form-status");
+  const btn = document.querySelector(".p-btn");
+  const services = [...document.querySelectorAll('input[name="service"]:checked')]
+                   .map(cb => cb.value).join(", ") || "None selected";
+  const templateParams = {
+    name: this.name.value,
+    email: this.email.value,
+    message: this.message.value,
+    services: services
+  };
+  btn.textContent = "Sending...";
+  btn.disabled = true;
+  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+    .then(() => {
+      status.textContent = "✅ Message sent!";
+      status.style.color = "#2e7d32";
+      this.reset();
+    })
+    .catch(() => {
+      status.textContent = "❌ Failed. Please try again.";
+      status.style.color = "#c62828";
+    })
+    .finally(() => {
+      btn.textContent = "Send Message";
+      btn.disabled = false;
+    });
+});
+
+// ===== HAMBURGER MENU =====
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("open");
+  mobileMenu.classList.toggle("open");
+});
+document.querySelectorAll(".mobile-link").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("open");
+    mobileMenu.classList.remove("open");
+  });
+});
+
+// ===== NAVBAR SCROLL =====
+window.addEventListener("scroll", () => {
+  document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 20);
+});
+
+// ===== SCROLL REVEAL =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("visible");
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
