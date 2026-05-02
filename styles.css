@@ -1,0 +1,528 @@
+ /* Container: Soft Warm Sand */
+/* --- FIX 3: GLOBAL SAFETY NET --- */
+* {
+    box-sizing: border-box; /* This is the most important line in CSS */
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* This kills the side-to-side scrollbar for good */
+    position: relative;
+     font-family: 'playfair display'!important;
+}
+
+
+/* Apply to the whole body */
+body {
+    background: linear-gradient(135deg,  #f7f3f0  0%, #f7f3f0 100%);
+    background-attachment: fixed; /* Keeps the gradient still while you scroll */
+}
+
+/* Or apply it only to the About Section */
+.about-section {
+   
+    padding: 40px 20px;
+}
+/* --- THE WRAPPER --- */
+.inner-wrap {
+  display: flex;
+  flex-direction: row; /* Standard row flow */
+  align-items: center;
+  justify-content: space-between; /* Pushes text left, image right */
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- THE IMAGE CONTAINER --- */
+.about-image {
+  flex: 0 0 auto; 
+  order: 2; /* Forces it to be the second item (the right side) */
+}
+
+.about-image img {
+  width: 330px;
+  height: auto;
+  display: block;
+  /* NO MORE margin-left: 292px! */
+  margin: 0; 
+  border-radius: 20px;
+  /* Keeping your cool animation */
+  animation: orbitRoll 16s linear infinite;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
+}
+
+/* --- THE TEXT BLOCK --- */
+.text-block {
+  flex: 1;
+  max-width: 550px;
+  text-align: left; /* Ensures text stays professional on the left */
+  order: 1; /* Forces text to be the first item (the left side) */
+}
+.text-block h2 {
+  font-family:'parisienne'; /* Matching the elegant font in your header */
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #000;
+
+}
+
+.text-block p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.text-block strong {
+  color: #d97d54; /* The specific orange/tan accent color */
+}
+
+
+.about-pic {
+    /* 1. The Roll: 20s is slow enough to be elegant, not dizzying */
+    animation: orbitRoll 16s linear infinite;
+    
+    /* 2. Style: Ensures the center of the star is the pivot point */
+    transform-origin: center;
+    
+    /* 3. The Depth: This shadow "grounds" the object so it doesn't look like it's just floating on paper */
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
+    
+    /* 4. Smoothness: Prevents any "stutter" in the animation */
+    will-change: transform;
+}
+
+@keyframes orbitRoll {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes orbitRoll {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.03); /* Tiny growth at the halfway mark */
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+/* The bottom accent line */
+.bottom-accent {
+  margin-top: 20px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid #ddd;
+  padding-top: 8px;
+  display: block;
+}
+
+/* Hide the unused overlay layers since we aren't using the card anymore */
+.glow-paper, .fiber-overlay {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px; /* Increased from 800px to allow better grid spacing */
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* --- 2. THE TICKER (Infinite Scroll) --- */
+:root {
+    --gap: 30px;
+    --duration: 25s;
+}
+
+.ticker {
+    overflow: hidden;
+    width: 100%;
+    padding: 30px 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+
+}
+
+.track {
+    display: flex;
+    width: max-content; 
+    animation: scroll var(--duration) linear infinite;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    padding-right: var(--gap);
+}
+
+.group span {
+    padding: 12px 24px;
+    border-radius: 100px;
+    background: rgba(20, 184, 166, 0.05);
+    border: 1px solid rgba(20, 184, 166, 0.2);
+    color: #0F766E;
+    white-space: nowrap;
+    font-family:  "Georgia", serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing:0.1rem;
+
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
+}
+
+/* --- SERVICES SECTION --- */
+
+.services-container {
+    text-align: center;
+    padding: 80px 20px;
+}
+.ser{
+
+    margin-bottom:51px;
+ font-family:'parisienne';
+ font-weight:600px;
+ letter-spacing:5px;
+ font-size:3rem;
+
+
+}
+
+/* Straight Heading */
+.services-heading {
+    font-family: 'Parisienne', cursive !important;
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+    letter-spacing: 2px;
+}
+
+/* The Wrapper - Stacked vertically and centered */
+.pill-wrapper {
+    display: flex;
+    flex-direction: column; /* Stacks them like the screenshot */
+    align-items: center;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.service-pill {
+    display: inline-block;
+    padding: 15px 45px;
+    border-radius: 100px;
+    font-family: 'Parisienne', cursive !important; /* Fancy font like the screenshot */
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    background: #fff;
+    color: #333;
+    border: 1px solid #444;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+
+    
+    /* This makes them overlap each other vertically */
+    margin-top: -5px; 
+  
+}
+
+/* Individual Tints & Rotations to match the screenshot */
+/* Individual Tints & Rotations - Matching your Screenshot */
+
+/* 1. Very Soft Pearl */
+.pill-1 { 
+    transform: rotate(-4deg); 
+    background-color: #ffffff; 
+    z-index: 5;
+}
+
+/* 2. Soft Clay/Peach */
+.pill-2 { 
+    transform: rotate(3.6deg) translateX(15px); 
+    background-color: #f7ede2; 
+    z-index: 4;
+}
+
+/* 3. Dusty Sage Green */
+.pill-3 { 
+    transform: rotate(-2.6deg) translateX(-10px); 
+    background-color: #f0f4f0; 
+    z-index: 3;
+}
+
+/* 4. Muted Sand/Tan */
+.pill-4 { 
+    transform: rotate(4deg) translateX(10px); 
+    background-color: #fdf2e9; 
+    z-index: 2;
+}
+
+/* 5. Pale Sky Blue/Grey */
+.pill-5 { 
+    transform: rotate(-3deg) translateX(-5px); 
+    background-color: #f1f3f5; 
+    z-index: 1;
+}
+
+/* Hover Effect: Turns into your signature Accent Orange */
+.service-pill:hover {
+    transform: rotate(0deg) scale(1.1);
+    background-color: #d97d54 !important; /* Forces the color change on hover */
+    color: #fff;
+    z-index: 10;
+    border-color: #d97d54;
+}
+
+.profile-pic {
+    width: 220px !important;
+    height: 220px !important;
+    object-fit: cover;
+    border-radius: 50% !important; /* This makes it a circle */
+    border: 4px solid #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.about-pic {
+  width: 350px;
+  height: 450px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.project-pic {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.container img:hover {
+    transform: scale(1.05); /* Slight zoom when hovering */
+}
+/* Apply the fancy font to both Welcome and Name */
+.cur, .name {
+    font-family: 'Parisienne', cursive !important;
+    font-weight: bold; /* Script fonts usually look better without bold */
+    text-align: center;
+    color: black;
+    margin-bottom: 0px;
+    letter-spacing:5.4px;
+}
+
+/* Specific sizing so they feel balanced */
+.cur {
+    font-size: 3.5rem;
+    margin-bottom: 38px;
+}
+.name {
+
+    font-size: 2.5rem;
+    margin-top: 20px;
+    letter-spacing: 5px; /* Increased for that bold showcase look */
+    font-weight: 200;
+    display: inline-block;
+    /* The Highlight Effect */
+    background: linear-gradient(to bottom, transparent 50%, #f2dcd7 50%);
+    /* Adjust padding to control how much highlight shows behind the letters */
+    padding: 0 10px;
+    line-height: 1.2;
+}
+/* --- 4. PORTFOLIO GRID & CARDS --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 40px 0;
+}
+.per{
+    font-family:'parisienne';
+ font-weight:600px;
+ letter-spacing:5px;
+ font-size:3rem;
+
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #eee;
+    aspect-ratio: 4 / 3;
+      width: 400px;
+    height: 220px;
+}
+
+.project-card img {
+    width: 400px;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 30px;
+    text-align: center;
+}
+
+.project-card:hover .overlay { opacity: 1; }
+.project-card:hover img { transform: scale(1.08); }
+
+/* --- 5. CONTACT SECTION (Isolated) --- */
+.p-contact-section {
+    width: 100%;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #fdfaf500;
+}
+.p-contact-sub{
+    font-family:'displayfair';
+    letter-spacing:1px;
+}
+
+.p-card {
+    background-color: hsla(39, 17%, 84%, 0.826);
+    width: 100%;
+    max-width: 600px; /* Reduced width for a better vertical look */
+    padding: 50px;
+    border-radius: 24px;
+    display: grid;
+    /* Changed from 1fr 1fr to 1fr to stack items vertically */
+    grid-template-columns: 1fr; 
+    gap: 40px; /* Slightly reduced gap for vertical flow */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    margin: 0 auto;
+}
+
+.p-field {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    font-family:'displayfair';
+    letter-spacing:1.5px;
+  
+}
+
+.p-field input, .p-field textarea {
+    width: 100%;
+    border: none;
+    padding: 12px 0;
+    background: transparent;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.p-btn {
+    background: #000;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* --- 6. THE BREAKOUT FOOTER (Slim Version) --- */
+.sb-portfolio-footer {
+  width: 100%;
+  background-color: hsl(0, 3%, 12%);
+  padding: 20px 0; 
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  border-top: 1px solid #1a1a1a;
+  box-sizing: border-box;
+  letter-spacing:1.8px;
+  font-family:'displayfair';
+
+}
+
+.sb-footer-container {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    
+}
+
+
+.sb-footer-brand p, 
+.sb-footer-links,
+.sb-footer-copy {
+    margin: 0;
+}
+
+.sb-footer-name {
+    font-size: 1.2rem;
+    line-height: 1;
+    letter-spacing:2px;
+}
+
+.sb-dot { color: #00d9ff; }
+
+.sb-footer-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.sb-footer-links a {
+    text-decoration: none;
+    color: #888;
+    font-size: 1rem;
+    transition: 0.3s;
+    font-family:'displayfair';
+}
+
+.sb-footer-links a:hover { 
+    color: #fff; 
+    font-family:'displayfair';
+  
+}
+
+/* --- 7. MOBILE RESPONSIVENESS --- */
+@media (max-width: 850px) {
+    .sb-footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .sb-footer-social {
+        align-items: center;
+    }
+
+    .name {
+        font-size: 50px;
+    }
+}
