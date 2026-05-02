@@ -223,7 +223,7 @@
 </head>
 <body>
 
-<!-- ===== NAVIGATION (NEW - added on top) ===== -->
+<!-- NAVIGATION -->
 <nav class="site-nav" id="navbar">
   <a href="#" class="nav-brand">Binisha<span class="nav-dot">.</span></a>
   <ul class="nav-links">
@@ -246,56 +246,36 @@
   </ul>
 </div>
 
-<!-- ===== HERO (YOUR ORIGINAL) ===== -->
+<!-- HERO -->
 <div class="container reveal">
     <h1 class="cur">Welcome to my Portfolio.</h1>
     <img src="photos/profile.jpg" class="profile-pic" alt="Binisha Poudel">
     <div class="name">Website Developer</div>
 </div>
 
-<!-- ===== TICKER (YOUR ORIGINAL) ===== -->
+<!-- TICKER -->
 <div class="ticker">
- <div class="track">
- <div class="group">
- <span>DEVELOPER</span>
- <span>DESIGNER</span>
- <span>GEN AI</span>
- <span>PROMPT ENGINEER</span>
-  <span>WORDPRESS</span>
-<span>ANIMATOR</span>
- <span>DEBUGGING</span>
-</div>
-<div class="group">
-<span>DEVELOPER</span>
-<span>DESIGNER</span>
- <span>GEN AI</span>
-<span>PROMPT ENGINEER</span>
-  <span>WORDPRESS</span>
-  <span>ANIMATOR</span>
-<span>DEBUGGING</span>
-    </div>
-<div class="group">
-<span>DEVELOPER</span>
-<span>DESIGNER</span>
- <span>GEN AI</span>
-<span>PROMPT ENGINEER</span>
-  <span>WORDPRESS</span>
-  <span>ANIMATOR</span>
-<span>DEBUGGING</span>
+  <div class="track">
+    <div class="group">
+      <span>DEVELOPER</span><span>DESIGNER</span><span>GEN AI</span>
+      <span>PROMPT ENGINEER</span><span>WORDPRESS</span><span>ANIMATOR</span><span>DEBUGGING</span>
     </div>
     <div class="group">
-      <span>DEVELOPER</span>
- <span>DESIGNER</span>
- <span>GEN AI</span>
- <span>PROMPT ENGINEER</span>
-   <span>WORDPRESS</span>
- <span>ANIMATOR</span>
- <span>DEBUGGING</span>
- </div>
-</div>
+      <span>DEVELOPER</span><span>DESIGNER</span><span>GEN AI</span>
+      <span>PROMPT ENGINEER</span><span>WORDPRESS</span><span>ANIMATOR</span><span>DEBUGGING</span>
+    </div>
+    <div class="group">
+      <span>DEVELOPER</span><span>DESIGNER</span><span>GEN AI</span>
+      <span>PROMPT ENGINEER</span><span>WORDPRESS</span><span>ANIMATOR</span><span>DEBUGGING</span>
+    </div>
+    <div class="group">
+      <span>DEVELOPER</span><span>DESIGNER</span><span>GEN AI</span>
+      <span>PROMPT ENGINEER</span><span>WORDPRESS</span><span>ANIMATOR</span><span>DEBUGGING</span>
+    </div>
+  </div>
 </div>
 
-<!-- ===== ABOUT (YOUR ORIGINAL) ===== -->
+<!-- ABOUT -->
 <section id="about" class="about-section">
   <div class="glow-paper" id="aboutCard">
     <div class="fiber-overlay"></div>
@@ -318,10 +298,10 @@
   </div>
 </section>
 
-<!-- ===== PROJECTS (YOUR ORIGINAL) ===== -->
+<!-- PROJECTS -->
 <section id="projects" class="project-section">
   <div class="container">
-    <h1 class="per reveal">Project showcase</h1> 
+    <h1 class="per reveal">Project showcase</h1>
     <div class="portfolio-grid">
       <div class="project-card reveal">
         <img src="photos/prj.png" width="400" height="200" class="project-pic">
@@ -335,11 +315,11 @@
   </div>
 </section>
 
-<!-- ===== SERVICES (YOUR ORIGINAL) ===== -->
+<!-- SERVICES -->
 <div id="services" class="container reveal">
     <h1 class="ser">services</h1>
     <div class="pill-wrapper">
-        <span class="service-pill pill-1 logo-text">LoGo</span>
+        <span class="service-pill pill-1">LoGo</span>
         <span class="service-pill pill-2">Web design</span>
         <span class="service-pill pill-3">Landing pages</span>
         <span class="service-pill pill-4">e-commerce site</span>
@@ -347,7 +327,7 @@
     </div>
 </div>
 
-<!-- ===== CONTACT (YOUR ORIGINAL + EmailJS) ===== -->
+<!-- CONTACT -->
 <section id="contact" class="p-contact-section">
     <div class="p-card reveal">
         <div class="p-left">
@@ -382,7 +362,7 @@
     </div>
 </section>
 
-<!-- ===== FOOTER (YOUR ORIGINAL) ===== -->
+<!-- FOOTER -->
 <footer class="sb-portfolio-footer">
     <div class="sb-footer-container">
         <div class="sb-footer-brand">
@@ -408,81 +388,48 @@
     </div>
 </footer>
 
-<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
 <script>
-// ===== TICKER OPTIMIZE (YOUR ORIGINAL) =====
 function optimizeTrack() {
   const track = document.querySelector('.track');
   const groups = document.querySelectorAll('.group');
-  if (groups.length > 0) {
-    const groupWidth = groups[0].offsetWidth;
-    track.style.width = (groupWidth * 2) + 'px';
-  }
+  if (groups.length > 0) track.style.width = (groups[0].offsetWidth * 2) + 'px';
 }
 window.addEventListener('load', optimizeTrack);
 window.addEventListener('resize', optimizeTrack);
 
-// ===== EMAILJS =====
 emailjs.init("YOUR_PUBLIC_KEY");
 document.getElementById("contact-form").addEventListener("submit", function(e) {
   e.preventDefault();
   const status = document.getElementById("form-status");
   const btn = document.querySelector(".p-btn");
-  const services = [...document.querySelectorAll('input[name="service"]:checked')]
-                   .map(cb => cb.value).join(", ") || "None selected";
-  const templateParams = {
-    name: this.name.value,
-    email: this.email.value,
-    message: this.message.value,
-    services: services
-  };
+  const services = [...document.querySelectorAll('input[name="service"]:checked')].map(cb => cb.value).join(", ") || "None selected";
   btn.textContent = "Sending...";
   btn.disabled = true;
-  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
-    .then(() => {
-      status.textContent = "✅ Message sent!";
-      status.style.color = "#2e7d32";
-      this.reset();
-    })
-    .catch(() => {
-      status.textContent = "❌ Failed. Please try again.";
-      status.style.color = "#c62828";
-    })
-    .finally(() => {
-      btn.textContent = "Send Message";
-      btn.disabled = false;
-    });
+  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    name: this.name.value, email: this.email.value,
+    message: this.message.value, services: services
+  })
+  .then(() => { status.textContent = "✅ Message sent!"; status.style.color = "#2e7d32"; this.reset(); })
+  .catch(() => { status.textContent = "❌ Failed. Try again."; status.style.color = "#c62828"; })
+  .finally(() => { btn.textContent = "Send Message"; btn.disabled = false; });
 });
 
-// ===== HAMBURGER MENU =====
 const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobileMenu");
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("open");
-  mobileMenu.classList.toggle("open");
-});
+hamburger.addEventListener("click", () => { hamburger.classList.toggle("open"); mobileMenu.classList.toggle("open"); });
 document.querySelectorAll(".mobile-link").forEach(link => {
-  link.addEventListener("click", () => {
-    hamburger.classList.remove("open");
-    mobileMenu.classList.remove("open");
-  });
+  link.addEventListener("click", () => { hamburger.classList.remove("open"); mobileMenu.classList.remove("open"); });
 });
 
-// ===== NAVBAR SCROLL =====
 window.addEventListener("scroll", () => {
   document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 20);
 });
 
-// ===== SCROLL REVEAL =====
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add("visible");
-  });
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
 }, { threshold: 0.1 });
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>
