@@ -37,7 +37,7 @@
 
 <!-- HERO -->
 <div class="container reveal">
-    <h1 class="cur">Welcome to my Protfolio.</h1>
+    <h1 class="cur">Welcome to my Portfolio.</h1>
     <img src="photos/profile.jpg" class="profile-pic" alt="Binisha Poudel">
     <div class="name">Website Developer</div>
 </div>
@@ -69,20 +69,28 @@
   <div class="glow-paper" id="aboutCard">
     <div class="fiber-overlay"></div>
     <div class="inner-wrap reveal">
+
+      <!-- Heading (always visible, order 1 on mobile) -->
+      <div class="text-block">
+        <h2>About Me</h2>
+        <!-- Desktop paragraph (hidden on mobile via CSS) -->
+        <p>Hi, I'm <strong>Binisha Poudel</strong>. 
+        A web developer working at the intersection of design and development, 
+        creating engaging experiences that function seamlessly in real-world.</p>
+      </div>
+
+      <!-- Spinning image (order 2 on mobile) -->
       <div class="about-image">
         <img src="photos/about.png" class="about-pic" alt="Profile">
       </div>
-      <div class="text-block">
-        <div class="top-row">
-          <div class="headings">
-            <h2>About Me</h2>
-          </div>
-        </div>
-        <p>
-          Hi, I'm <strong>Binisha Poudel</strong>. 
-          A web developer working at the intersection of design and development, creating engaging experiences that function seamlessly in real-world.
-        </p>
+
+      <!-- Description shown only on mobile (order 3) -->
+      <div class="about-desc">
+        <p>Hi, I'm <strong>Binisha Poudel</strong>. 
+        A web developer working at the intersection of design and development, 
+        creating engaging experiences that function seamlessly in real-world.</p>
       </div>
+
     </div>
   </div>
 </section>
@@ -179,6 +187,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
+// TICKER
 function optimizeTrack() {
   const track = document.querySelector('.track');
   const groups = document.querySelectorAll('.group');
@@ -187,6 +196,7 @@ function optimizeTrack() {
 window.addEventListener('load', optimizeTrack);
 window.addEventListener('resize', optimizeTrack);
 
+// EMAILJS
 emailjs.init("YOUR_PUBLIC_KEY");
 document.getElementById("contact-form").addEventListener("submit", function(e) {
   e.preventDefault();
@@ -204,6 +214,7 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
   .finally(() => { btn.textContent = "Send Message"; btn.disabled = false; });
 });
 
+// HAMBURGER
 const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobileMenu");
 hamburger.addEventListener("click", () => { hamburger.classList.toggle("open"); mobileMenu.classList.toggle("open"); });
@@ -211,10 +222,12 @@ document.querySelectorAll(".mobile-link").forEach(link => {
   link.addEventListener("click", () => { hamburger.classList.remove("open"); mobileMenu.classList.remove("open"); });
 });
 
+// NAVBAR SCROLL
 window.addEventListener("scroll", () => {
   document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 20);
 });
 
+// SCROLL REVEAL
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
 }, { threshold: 0.1 });
