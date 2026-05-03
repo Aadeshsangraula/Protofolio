@@ -767,3 +767,12 @@ body { padding-top: 64px; }
   .about-image img { width: 170px !important; }
   .p-card { padding: 20px 14px !important; }
 }
+
+@media (max-width: 768px) {
+  .about-image {
+    order: 2 !important;
+  }
+  .text-block {
+    order: 1 !important;
+  }
+}
