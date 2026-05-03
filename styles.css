@@ -17,7 +17,8 @@ body {
     background: linear-gradient(135deg, #f7f3f0 0%, #f7f3f0 100%);
     background-attachment: fixed;
 }
-
+.prto{
+    color: red;
 .about-section {
     padding: 40px 20px;
 }
