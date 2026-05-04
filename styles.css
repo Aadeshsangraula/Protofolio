@@ -224,11 +224,11 @@ body {
     margin-top: -5px;
 }
 
-.pill-1 { transform: rotate(-4deg); background-color: #ffffff; z-index: 5; }
-.pill-2 { transform: rotate(3.6deg) translateX(15px); background-color: #f7ede2; z-index: 4; }
-.pill-3 { transform: rotate(-2.6deg) translateX(-10px); background-color: #f0f4f0; z-index: 3; }
-.pill-4 { transform: rotate(4deg) translateX(10px); background-color: #fdf2e9; z-index: 2; }
-.pill-5 { transform: rotate(-3deg) translateX(-5px); background-color: #f1f3f5; z-index: 1; }
+.pill-1 { transform: rotate(-5deg); background-color: #ffffff; z-index: 5; }
+.pill-2 { transform: rotate(3.8deg) translateX(14px); background-color: #f7ede2; z-index: 4; }
+.pill-3 { transform: rotate(-2.9deg) translateX(-9px); background-color: #f0f4f0; z-index: 3; }
+.pill-4 { transform: rotate(4deg) translateX(9px); background-color: #fdf2e9; z-index: 2; }
+.pill-5 { transform: rotate(-2.7deg) translateX(-4.6px); background-color: #f1f3f5; z-index: 1; }
 
 .service-pill:hover {
     transform: rotate(0deg) scale(1.1);
