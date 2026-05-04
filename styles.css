@@ -469,8 +469,8 @@ body {
   color: #ffffff;
   border-top: 1px solid #1a1a1a;
   box-sizing: border-box;
-  letter-spacing: 1.8px;
-  font-family: 'displayfair';
+  letter-spacing: 0.8px;
+  font-family: 'cursive';
 }
 
 .sb-footer-container {
@@ -492,7 +492,7 @@ body {
 .sb-footer-name {
     font-size: 1.2rem;
     line-height: 1;
-    letter-spacing: 2px;
+    letter-spacing: 0.9px;
 }
 
 .sb-dot { color: #00d9ff; }
