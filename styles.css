@@ -34,7 +34,7 @@ html, body {
   border-color: var(--violet);
 }
 body {
-    background: linear-gradient(135deg, #f7f3f0 0%, #f7f3f0 100%);
+ 
     background-attachment: fixed;
 }
 
@@ -337,6 +337,7 @@ font-family:'displayfair';
 }
 
 /* --- HERO TEXT --- */
+
 .cur, .name {
     font-family: 'Parisienne', cursive !important;
     font-weight: bold;
