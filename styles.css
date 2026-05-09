@@ -11,7 +11,27 @@ html, body {
     position: relative;
     font-family: 'playfair display'!important;
 }
-
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.skill-tags span {
+  padding: 7px 16px;
+  border-radius: 50px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--violet);
+  transition: var(--transition);
+  cursor: default;
+}
+.skill-tags span:hover {
+  background: var(--violet);
+  color: #fff;
+  border-color: var(--violet);
+}
 body {
     background: linear-gradient(135deg, #f7f3f0 0%, #f7f3f0 100%);
     background-attachment: fixed;
