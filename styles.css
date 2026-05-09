@@ -20,7 +20,7 @@ html, body {
   padding: 7px 16px;
   border-radius: 50px;
   background: var(--bg-2);
-  border: 1px solid var(--border);
+  border: solid 2px #32a1ce;;
   font-size: 0.82rem;
   font-weight: 500;
   color: var(--violet);
