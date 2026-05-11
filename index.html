@@ -8,7 +8,8 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ovo&family=Parisienne&display=swap" rel="stylesheet">
+<!-- Added Playfair Display for the 'cursive but not too cursive' description and footer -->
+<link href="https://fonts.googleapis.com/css2?family=Ovo&family=Parisienne&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -36,36 +37,38 @@
   </ul>
 </div>
 
-<!-- HERO -->
-<div class="container reveal">
-    <h1 class="cur">Welcome to my Portfolio.</span></h1>
-    <img src="photos/profile.jpg" class="profile-pic" alt="Binisha Poudel">
-    <div class="name">Website Developer</div>
-</div>
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <div class="container reveal">
+      <h1 class="cur">Welcome to my Portfolio.</h1>
+      <img src="photos/profile.jpg" class="profile-pic" alt="Binisha Poudel">
+      <div class="name">Website Developer</div>
+  </div>
 
-<!-- TICKER -->
-<div class="ticker">
-  <div class="track">
-    <div class="group">
-      <span>DEVELOPER</span><span>DESIGNER</span><span>GEN AI</span>
-      <span>PROMPT ENGINEER</span><span>WORDPRESS</span><span>ANIMATOR</span><span>DEBUGGING</span>
-    </div>
-    <div class="group">
-      <span>DEVELOPER</span><span>DESIGNER</span><span>GEN AI</span>
-      <span>PROMPT ENGINEER</span><span>WORDPRESS</span><span>ANIMATOR</span><span>DEBUGGING</span>
-    </div>
-    <div class="group">
-      <span>DEVELOPER</span><span>DESIGNER</span><span>GEN AI</span>
-      <span>PROMPT ENGINEER</span><span>WORDPRESS</span><span>ANIMATOR</span><span>DEBUGGING</span>
-    </div>
-    <div class="group">
-      <span>DEVELOPER</span><span>DESIGNER</span><span>GEN AI</span>
-      <span>PROMPT ENGINEER</span><span>WORDPRESS</span><span>ANIMATOR</span><span>DEBUGGING</span>
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="track">
+      <div class="group">
+        <span>DEVELOPER</span><span>DESIGNER</span><span>GEN AI</span>
+        <span>PROMPT ENGINEER</span><span>WORDPRESS</span><span>ANIMATOR</span><span>DEBUGGING</span>
+      </div>
+      <div class="group">
+        <span>DEVELOPER</span><span>DESIGNER</span><span>GEN AI</span>
+        <span>PROMPT ENGINEER</span><span>WORDPRESS</span><span>ANIMATOR</span><span>DEBUGGING</span>
+      </div>
+      <div class="group">
+        <span>DEVELOPER</span><span>DESIGNER</span><span>GEN AI</span>
+        <span>PROMPT ENGINEER</span><span>WORDPRESS</span><span>ANIMATOR</span><span>DEBUGGING</span>
+      </div>
+      <div class="group">
+        <span>DEVELOPER</span><span>DESIGNER</span><span>GEN AI</span>
+        <span>PROMPT ENGINEER</span><span>WORDPRESS</span><span>ANIMATOR</span><span>DEBUGGING</span>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-  <!-- ABOUT -->
+<!-- ABOUT -->
 <section id="about" class="about-section">
   <div class="glow-paper" id="aboutCard">
     <div class="fiber-overlay"></div>
@@ -75,13 +78,9 @@
       <div class="text-block">
         <h2>About Me</h2>
         <!-- Desktop paragraph (hidden on mobile via CSS) -->
-        <p>Hi, I'm <strong><span style="color:rgba(255, 0, 0, 0.5);">Binisha Poudel</span></strong>. 
+        <p>Hi, I'm <strong><span style="color:rgba(15, 118, 110, 0.8);">Binisha Poudel</span></strong>. 
         A web developer working at the intersection of design and development, 
         creating engaging experiences that function seamlessly in real-world.</p>
-        <div class="skill-tags">
-          <span>HTML / CSS</span><span>JavaScript</span> <span>Next.js</span><span>WordPress</span>
-          <span>Figma</span><span>UI Design</span><span>Prompt Eng.</span>
-        </div>
       </div>
 
       <!-- Spinning image (order 2 on mobile) -->
@@ -90,7 +89,7 @@
       </div>
       <!-- Description shown only on mobile (order 3) -->
       <div class="about-desc">
-        <p>Hi, I'm <strong><span style="color:rgba(255, 0, 0, 0.5);">Binisha Poudel</span></strong>. 
+        <p>Hi, I'm <strong><span style="color:rgba(15, 118, 110, 0.8);">Binisha Poudel</span></strong>. 
         A web developer working at the intersection of design and development, 
         creating engaging experiences that function seamlessly in real-world.</p>
       </div>
@@ -99,15 +98,13 @@
   </div>
 </section>
 
-<hr style="border: none; height: 1px; background-color: rgba(255, 0, 0, 0.2); width: 100%;">
 <!-- PROJECTS -->
-  
 <section id="projects" class="project-section">
   <div class="container">
     <h1 class="per reveal">Project showcase</h1>
     <div class="portfolio-grid">
       <div class="project-card reveal">
-        <img src="photos/prj.png" width="400" height="200" class="project-pic">
+        <img src="photos/prj.png" width="400" height="200" class="project-pic" alt="Project">
         <div class="overlay">
           <h3>Meditation Site</h3>
           <p>A simple meditation website with guided sessions, breathing exercises, Mood Tracker.</p>
@@ -117,19 +114,20 @@
     </div>
   </div>
 </section>
-<hr style="border: none; height: 1px; background-color: rgba(255, 0, 0, 0.2); width: 100%;">
   
 <!-- SERVICES -->
-<div id="services" class="container reveal">
-    <h1 class="ser">services</h1>
-    <div class="pill-wrapper">
-        <span class="service-pill pill-1">LoGo</span>
-        <span class="service-pill pill-2">Web design</span>
-        <span class="service-pill pill-3">Landing pages</span>
-        <span class="service-pill pill-4">e-commerce site</span>
-        <span class="service-pill pill-5">ai powered websites</span>
-    </div>
-</div>
+<section id="services-wrap" class="services-section">
+  <div id="services" class="container reveal">
+      <h1 class="ser">services</h1>
+      <div class="pill-wrapper reveal">
+          <span class="service-pill pill-1">LoGo</span>
+          <span class="service-pill pill-2">Web design</span>
+          <span class="service-pill pill-3">Landing pages</span>
+          <span class="service-pill pill-4">e-commerce site</span>
+          <span class="service-pill pill-5">ai powered websites</span>
+      </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact" class="p-contact-section">
@@ -168,7 +166,7 @@
 
 <!-- FOOTER -->
 <footer class="sb-portfolio-footer">
-    <div class="sb-footer-container">
+    <div class="sb-footer-container reveal">
         <div class="sb-footer-brand">
             <span class="sb-footer-name">Binisha Poudel<span class="sb-dot">.</span></span>
             <p class="sb-footer-tagline">Building digital experiences.</p>
@@ -193,52 +191,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-// TICKER
-function optimizeTrack() {
-  const track = document.querySelector('.track');
-  const groups = document.querySelectorAll('.group');
-  if (groups.length > 0) track.style.width = (groups[0].offsetWidth * 2) + 'px';
-}
-window.addEventListener('load', optimizeTrack);
-window.addEventListener('resize', optimizeTrack);
-
-// EMAILJS
-emailjs.init("YOUR_PUBLIC_KEY");
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-  e.preventDefault();
-  const status = document.getElementById("form-status");
-  const btn = document.querySelector(".p-btn");
-  const services = [...document.querySelectorAll('input[name="service"]:checked')].map(cb => cb.value).join(", ") || "None selected";
-  btn.textContent = "Sending...";
-  btn.disabled = true;
-  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-    name: this.name.value, email: this.email.value,
-    message: this.message.value, services: services
-  })
-  .then(() => { status.textContent = "✅ Message sent!"; status.style.color = "#2e7d32"; this.reset(); })
-  .catch(() => { status.textContent = "❌ Failed. Try again."; status.style.color = "#c62828"; })
-  .finally(() => { btn.textContent = "Send Message"; btn.disabled = false; });
-});
-
-// HAMBURGER
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-hamburger.addEventListener("click", () => { hamburger.classList.toggle("open"); mobileMenu.classList.toggle("open"); });
-document.querySelectorAll(".mobile-link").forEach(link => {
-  link.addEventListener("click", () => { hamburger.classList.remove("open"); mobileMenu.classList.remove("open"); });
-});
-
-// NAVBAR SCROLL
-window.addEventListener("scroll", () => {
-  document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 20);
-});
-
-// SCROLL REVEAL
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-}, { threshold: 0.1 });
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-</script>
+<script src="script.js"></script>
 </body>
 </html>
