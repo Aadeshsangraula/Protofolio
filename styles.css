@@ -29,7 +29,7 @@ html, body {
     background-color: var(--bg-light);
     color: var(--text-main);
     scroll-behavior: smooth;
-    /* FIX FOR ISSUE 4: Prevents section titles from hiding behind the sticky navbar */
+    /* Prevents section titles from hiding behind the sticky navbar */
     scroll-padding-top: 100px; 
 }
 
@@ -77,7 +77,7 @@ html, body {
     50%      { transform: translateY(-9px); }
 }
 
-/* About Image (Fixed Cropping Issue) */
+/* About Image */
 .about-image {
     flex: 0 0 auto;
     order: 2;
@@ -85,7 +85,7 @@ html, body {
 
 .about-image img, .about-pic {
     width: 350px;
-    height: auto !important; /* Changed from fixed 450px to auto so it scales perfectly */
+    height: auto !important; 
     border-radius: 20px !important;
     animation: orbitRoll 16s linear infinite !important;
     transform-origin: center;
@@ -338,27 +338,27 @@ html, body {
 .sb-portfolio-footer { 
     width: 100%; 
     background-color: var(--bg-light); 
-    padding: 30px 0 20px 0; /* Reduced padding from top and bottom */
+    padding: 30px 0 20px 0; 
     color: var(--text-main); 
     border-top: 1px solid var(--theme-primary-light); 
     box-sizing: border-box; 
     font-family: 'Playfair Display', serif; 
 }
-.sb-footer-container { max-width: 900px; margin: 0 auto; width: 100%; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; /* Reduced gap */ }
+.sb-footer-container { max-width: 900px; margin: 0 auto; width: 100%; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
 .sb-footer-brand p, .sb-footer-links, .sb-footer-copy { margin: 0; }
-.sb-footer-name { font-size: 1.25rem; /* Reduced font size */ line-height: 1; letter-spacing: 0.9px; font-family: 'Parisienne', cursive; color: var(--text-heading); }
+.sb-footer-name { font-size: 1.25rem; line-height: 1; letter-spacing: 0.9px; font-family: 'Parisienne', cursive; color: var(--text-heading); }
 .sb-dot { color: var(--theme-primary); }
-.sb-footer-tagline { font-style: italic; color: #888; margin-top: 5px !important; font-size: 0.85rem; /* Reduced */ }
+.sb-footer-tagline { font-style: italic; color: #888; margin-top: 5px !important; font-size: 0.85rem; }
 .sb-footer-links { list-style: none; display: flex; gap: 20px; padding: 0; }
-.sb-footer-links a { text-decoration: none; color: #888; font-size: 0.95rem; /* Reduced */ transition: var(--transition-smooth); font-style: italic; display: inline-block;}
+.sb-footer-links a { text-decoration: none; color: #888; font-size: 0.95rem; transition: var(--transition-smooth); font-style: italic; display: inline-block;}
 .sb-footer-links a:hover { color: var(--theme-primary); transform: translateY(-2px); }
-.sb-footer-copy { color: #888; font-size: 0.85rem; margin-top: 5px; font-style: italic;} /* Reduced spacing and size */
+.sb-footer-copy { color: #888; font-size: 0.85rem; margin-top: 5px; font-style: italic;}
 
 .sb-social-icons { display: flex; gap: 15px; margin-bottom: 5px;}
-.sb-social-icons a { color: #bfa1a6; font-size: 1.1rem; /* Reduced icon size */ transition: var(--transition-smooth) !important; display: inline-block;}
+.sb-social-icons a { color: #bfa1a6; font-size: 1.1rem; transition: var(--transition-smooth) !important; display: inline-block;}
 .sb-social-icons a:hover { color: var(--theme-primary) !important; transform: translateY(-4px) !important; }
 
-.sb-footer-mail { color: #888; text-decoration: none; font-style: italic; font-size: 0.95rem; /* Reduced */ transition: var(--transition-smooth); }
+.sb-footer-mail { color: #888; text-decoration: none; font-style: italic; font-size: 0.95rem; transition: var(--transition-smooth); }
 .sb-footer-mail:hover { color: var(--theme-primary); }
 
 /* --- ORIGINAL SCROLL REVEAL --- */
@@ -380,20 +380,13 @@ html, body {
 }
 .site-nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 
-/* HEADER BRAND WITH HOVER EFFECTS */
+/* HEADER BRAND (Reverted without hover effect) */
 .nav-brand { 
-    display: inline-block;
     font-family: 'Parisienne', cursive; 
     font-size: 1.8rem; 
     color: var(--text-heading); 
     text-decoration: none; 
     letter-spacing: 2px; 
-    transition: var(--transition-smooth);
-}
-.nav-brand:hover {
-    color: var(--theme-primary);
-    transform: scale(1.05);
-    text-shadow: 0 4px 10px rgba(223, 155, 167, 0.3);
 }
 
 .nav-links { list-style: none; display: flex; gap: 32px; margin: 0; padding: 0; }
