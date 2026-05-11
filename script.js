@@ -33,7 +33,7 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
     })
     .catch((err) => { 
         console.error("EmailJS Error:", err); // This helps debug if it fails again
-        status.textContent = "❌ Failed to send. Please try again."; 
+        status.textContent = "Error! Please try again."; 
         status.style.color = "#c62828"; 
     })
     .finally(() => { 
