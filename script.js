@@ -8,17 +8,19 @@ window.addEventListener('load', optimizeTrack);
 window.addEventListener('resize', optimizeTrack);
 
 // EMAILJS SETUP
-emailjs.init("D1oslzmJLzK07qjUx");
+// EMAILJS SETUP
+emailjs.init("D1oslzmJLzK07qjUx"); // e.g., "aBcdEFg123456"
 document.getElementById("contact-form").addEventListener("submit", function(e) {
     e.preventDefault();
     const status = document.getElementById("form-status");
     const btn = document.querySelector(".p-btn");
-    const services = [...document.querySelectorAll('input[name="service"]:checked')].map(cb => cb.value).join(", ") || "None selected";
+    const services =[...document.querySelectorAll('input[name="service"]:checked')].map(cb => cb.value).join(", ") || "None selected";
     
     btn.textContent = "Sending...";
     btn.disabled = true;
     
-    emailjs.send("YOUR_SERVICE_ID", "template_1mj9unj", {
+    // Replace the next line with your Service ID and Template ID
+    emailjs.send("service_bbums6w", "template_1mj9unj", {
         name: this.name.value, 
         email: this.email.value,
         message: this.message.value, 
@@ -29,7 +31,8 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
         status.style.color = "#0f766e"; 
         this.reset(); 
     })
-    .catch(() => { 
+    .catch((err) => { 
+        console.error("EmailJS Error:", err); // This helps debug if it fails again
         status.textContent = "❌ Failed to send. Please try again."; 
         status.style.color = "#c62828"; 
     })
