@@ -8,7 +8,7 @@ window.addEventListener('load', optimizeTrack);
 window.addEventListener('resize', optimizeTrack);
 
 // EMAILJS SETUP
-emailjs.init("YOUR_PUBLIC_KEY");
+emailjs.init("D1oslzmJLzK07qjUx");
 document.getElementById("contact-form").addEventListener("submit", function(e) {
     e.preventDefault();
     const status = document.getElementById("form-status");
@@ -18,7 +18,7 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
     btn.textContent = "Sending...";
     btn.disabled = true;
     
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    emailjs.send("YOUR_SERVICE_ID", "template_1mj9unj", {
         name: this.name.value, 
         email: this.email.value,
         message: this.message.value, 
