@@ -23,8 +23,8 @@
 
 html {
     scroll-behavior: smooth;
-    /* Prevents section titles from hiding behind the sticky navbar */
-    scroll-padding-top: 90px; 
+    /* FIX: perfectly offsets the sticky navbar so headers align exactly like your reference image */
+    scroll-padding-top: 75px; 
 }
 
 body {
@@ -42,11 +42,6 @@ body {
 .project-section { background-color: var(--bg-alternate); padding: 100px 20px; }
 .services-section { background-color: var(--bg-light); padding: 100px 20px; }
 .p-contact-section { background-color: var(--bg-alternate); padding: 100px 20px; display: flex; justify-content: center; }
-
-/* Exact offset for anchor links */
-#about, #projects, #services, #contact {
-    scroll-margin-top: 80px;
-}
 
 /* --- THE WRAPPER --- */
 .inner-wrap {
@@ -85,7 +80,7 @@ body {
     50%      { transform: translateY(-9px); }
 }
 
-/* About Image (Fixed Desktop Cropping Issue & Safe Rotation Space) */
+/* About Image (FIXED: Auto height prevents cropping, slightly smaller width so it's not too big) */
 .about-image {
     flex: 0 0 auto;
     order: 2;
@@ -93,9 +88,8 @@ body {
 }
 
 .about-image img, .about-pic {
-    width: 350px;
-    height: 450px !important; /* Restored fixed height for desktop */
-    object-fit: cover !important; /* Ensures the image doesn't stretch or distort inside the box */
+    width: 320px !important;
+    height: auto !important; 
     border-radius: 20px !important;
     animation: orbitRoll 16s linear infinite !important;
     transform-origin: center;
@@ -392,7 +386,7 @@ body {
 
 /* --- HEADER BRAND & ELEGANT BEE HOVER ANIMATION --- */
 .nav-brand { 
-    position: relative; /* Anchor for the bees */
+    position: relative; 
     display: inline-block;
     font-family: 'Parisienne', cursive; 
     font-size: 1.8rem; 
@@ -420,7 +414,6 @@ body {
     visibility: hidden;
     /* Soft glowing trail */
     filter: drop-shadow(0 2px 4px rgba(223, 155, 167, 0.6)) drop-shadow(0 0 8px rgba(223, 155, 167, 0.4));
-    /* Start hidden inside the text */
     transform: translate(-50%, -50%) scale(0.1);
     transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
     z-index: 20;
@@ -434,12 +427,10 @@ body {
 }
 
 .nav-brand:hover::before {
-    /* Bee 1: Clockwise orbit + wing flutter */
     animation: beeOrbit1 3.5s linear infinite, beeFlutter 0.08s ease-in-out infinite alternate;
 }
 
 .nav-brand:hover::after {
-    /* Bee 2: Counter-clockwise orbit (larger) + wing flutter */
     animation: beeOrbit2 4.2s linear infinite, beeFlutter 0.1s ease-in-out infinite alternate;
     animation-delay: 0.15s;
 }
