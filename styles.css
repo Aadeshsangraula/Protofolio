@@ -21,14 +21,19 @@
     --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-html, body {
+html {
+    scroll-behavior: smooth;
+    /* Prevents section titles from hiding behind the sticky navbar */
+    scroll-padding-top: 90px; 
+}
+
+body {
     width: 100%;
     overflow-x: hidden;
     position: relative;
     font-family: 'Playfair Display', serif;
     background-color: var(--bg-light);
     color: var(--text-main);
-    scroll-behavior: smooth;
 }
 
 /* --- SECTION SEPARATORS --- */
@@ -37,6 +42,11 @@ html, body {
 .project-section { background-color: var(--bg-alternate); padding: 100px 20px; }
 .services-section { background-color: var(--bg-light); padding: 100px 20px; }
 .p-contact-section { background-color: var(--bg-alternate); padding: 100px 20px; display: flex; justify-content: center; }
+
+/* FIX FOR ISSUE 1: Exact offset for anchor links */
+#about, #projects, #services, #contact {
+    scroll-margin-top: 80px;
+}
 
 /* --- THE WRAPPER --- */
 .inner-wrap {
@@ -75,17 +85,18 @@ html, body {
     50%      { transform: translateY(-9px); }
 }
 
-/* About Image */
+/* About Image (Fixed Desktop Cropping Issue) */
 .about-image {
     flex: 0 0 auto;
     order: 2;
+    padding-right: 20px; /* Safe space for rotation */
 }
 
 .about-image img, .about-pic {
     width: 350px;
-    height: 450px;
+    height: 450px !important; /* Restored fixed height for desktop */
+    object-fit: cover !important; /* Ensures the image doesn't stretch or distort inside the box */
     border-radius: 20px !important;
-    object-fit: cover;
     animation: orbitRoll 16s linear infinite !important;
     transform-origin: center;
     filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1)) !important;
@@ -125,7 +136,7 @@ html, body {
 .about-desc p, .text-block p {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 1.2rem; /* Restored original font size */
+    font-size: 1.2rem;
     line-height: 1.6;
     color: var(--text-main);
 }
@@ -148,7 +159,7 @@ html, body {
     border-radius: 50px;
     background: transparent;
     border: solid 2px var(--theme-primary);
-    font-size: 0.82rem; /* Restored original font size */
+    font-size: 0.82rem; 
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-weight: 600;
@@ -206,7 +217,7 @@ html, body {
     margin-bottom: 50px;
     font-family: 'Parisienne', cursive;
     letter-spacing: 5px;
-    font-size: 3rem; /* Restored original font size */
+    font-size: 3rem;
     color: var(--text-heading);
 }
 
@@ -216,7 +227,7 @@ html, body {
     padding: 15px 45px;
     border-radius: 100px;
     font-family: 'Parisienne', cursive !important;
-    font-size: 1.4rem; /* Restored original font size */
+    font-size: 1.4rem; 
     text-transform: capitalize;
     background: #fff;
     color: var(--text-main);
@@ -334,22 +345,30 @@ html, body {
 }
 
 /* --- FOOTER --- */
-.sb-portfolio-footer { width: 100%; background-color: var(--bg-light); padding: 50px 0 30px 0; color: var(--text-main); border-top: 1px solid var(--theme-primary-light); box-sizing: border-box; font-family: 'Playfair Display', serif; }
-.sb-footer-container { max-width: 900px; margin: 0 auto; width: 100%; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+.sb-portfolio-footer { 
+    width: 100%; 
+    background-color: var(--bg-light); 
+    padding: 30px 0 20px 0; 
+    color: var(--text-main); 
+    border-top: 1px solid var(--theme-primary-light); 
+    box-sizing: border-box; 
+    font-family: 'Playfair Display', serif; 
+}
+.sb-footer-container { max-width: 900px; margin: 0 auto; width: 100%; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
 .sb-footer-brand p, .sb-footer-links, .sb-footer-copy { margin: 0; }
-.sb-footer-name { font-size: 1.4rem; line-height: 1; letter-spacing: 0.9px; font-family: 'Parisienne', cursive; color: var(--text-heading); }
+.sb-footer-name { font-size: 1.25rem; line-height: 1; letter-spacing: 0.9px; font-family: 'Parisienne', cursive; color: var(--text-heading); }
 .sb-dot { color: var(--theme-primary); }
-.sb-footer-tagline { font-style: italic; color: #888; margin-top: 5px !important; font-size: 0.95rem; }
+.sb-footer-tagline { font-style: italic; color: #888; margin-top: 5px !important; font-size: 0.85rem; }
 .sb-footer-links { list-style: none; display: flex; gap: 20px; padding: 0; }
-.sb-footer-links a { text-decoration: none; color: #888; font-size: 1rem; transition: var(--transition-smooth); font-style: italic; display: inline-block;}
+.sb-footer-links a { text-decoration: none; color: #888; font-size: 0.95rem; transition: var(--transition-smooth); font-style: italic; display: inline-block;}
 .sb-footer-links a:hover { color: var(--theme-primary); transform: translateY(-2px); }
-.sb-footer-copy { color: #888; font-size: 0.9rem; margin-top: 10px; font-style: italic;}
+.sb-footer-copy { color: #888; font-size: 0.85rem; margin-top: 5px; font-style: italic;}
 
-.sb-social-icons { display: flex; gap: 15px; margin-bottom: 8px;}
-.sb-social-icons a { color: #bfa1a6; font-size: 1.2rem; transition: var(--transition-smooth) !important; display: inline-block;}
+.sb-social-icons { display: flex; gap: 15px; margin-bottom: 5px;}
+.sb-social-icons a { color: #bfa1a6; font-size: 1.1rem; transition: var(--transition-smooth) !important; display: inline-block;}
 .sb-social-icons a:hover { color: var(--theme-primary) !important; transform: translateY(-4px) !important; }
 
-.sb-footer-mail { color: #888; text-decoration: none; font-style: italic; font-size: 1rem; transition: var(--transition-smooth); }
+.sb-footer-mail { color: #888; text-decoration: none; font-style: italic; font-size: 0.95rem; transition: var(--transition-smooth); }
 .sb-footer-mail:hover { color: var(--theme-primary); }
 
 /* --- ORIGINAL SCROLL REVEAL --- */
@@ -371,7 +390,14 @@ html, body {
 }
 .site-nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 
-.nav-brand { font-family: 'Parisienne', cursive; font-size: 1.8rem; color: var(--text-heading); text-decoration: none; letter-spacing: 2px; }
+.nav-brand { 
+    font-family: 'Parisienne', cursive; 
+    font-size: 1.8rem; 
+    color: var(--text-heading); 
+    text-decoration: none; 
+    letter-spacing: 2px; 
+}
+
 .nav-links { list-style: none; display: flex; gap: 32px; margin: 0; padding: 0; }
 .nav-links a {
     text-decoration: none; color: #555; font-size: 0.82rem; letter-spacing: 2px; text-transform: uppercase;
@@ -418,10 +444,10 @@ html, body {
 
     .inner-wrap { flex-direction: column !important; align-items: center !important; text-align: center !important; gap: 24px !important; }
     .text-block  { order: 1 !important; text-align: center !important; max-width: 100% !important; }
-    .about-image { order: 2 !important; }
+    .about-image { order: 2 !important; padding-right: 0; }
     .about-desc  { order: 3 !important; text-align: center !important; display: block !important; }
     
-    /* Fixed the Mobile Image Stretching/Cropping Here */
+    /* Auto height applied only for mobile */
     .about-image img, .about-pic { 
         width: 200px !important; 
         height: auto !important; 
@@ -443,7 +469,7 @@ html, body {
     .p-card { padding: 35px 20px !important; }
     .p-title { font-size: 1.4rem !important; }
 
-    .sb-footer-container { flex-direction: column !important; text-align: center !important; padding: 0 20px !important; gap: 20px !important; }
+    .sb-footer-container { flex-direction: column !important; text-align: center !important; padding: 0 20px !important; gap: 15px !important; }
     .sb-social-icons { justify-content: center !important; }
     .sb-footer-links { justify-content: center !important; flex-wrap: wrap !important; }
 }
@@ -453,7 +479,6 @@ html, body {
     .name { font-size: 1.3rem !important; }
     .profile-pic { width: 130px !important; height: 130px !important; }
     
-    /* Fixed the Mobile Image Stretching/Cropping Here */
     .about-image img, .about-pic { 
         width: 170px !important; 
         height: auto !important; 
