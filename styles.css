@@ -43,7 +43,7 @@ body {
 .services-section { background-color: var(--bg-light); padding: 100px 20px; }
 .p-contact-section { background-color: var(--bg-alternate); padding: 100px 20px; display: flex; justify-content: center; }
 
-/* FIX FOR ISSUE 1: Exact offset for anchor links */
+/* Exact offset for anchor links */
 #about, #projects, #services, #contact {
     scroll-margin-top: 80px;
 }
@@ -85,7 +85,7 @@ body {
     50%      { transform: translateY(-9px); }
 }
 
-/* About Image (Fixed Desktop Cropping Issue) */
+/* About Image (Fixed Desktop Cropping Issue & Safe Rotation Space) */
 .about-image {
     flex: 0 0 auto;
     order: 2;
@@ -390,12 +390,81 @@ body {
 }
 .site-nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 
+/* --- HEADER BRAND & ELEGANT BEE HOVER ANIMATION --- */
 .nav-brand { 
+    position: relative; /* Anchor for the bees */
+    display: inline-block;
     font-family: 'Parisienne', cursive; 
     font-size: 1.8rem; 
     color: var(--text-heading); 
     text-decoration: none; 
     letter-spacing: 2px; 
+}
+
+/* SVG Bees encoded directly for premium cross-device consistency */
+.nav-brand::before,
+.nav-brand::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    /* Custom delicate golden-pink bee */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 11c-2-3-5-5-8-3 2 3 6 4 8 3zm0 0c2-3 5-5 8-3-2 3-6 4-8 3z" fill="%23fdf3f4" stroke="%23df9ba7" stroke-width="1"/><ellipse cx="12" cy="14" rx="3" ry="5" fill="%23df9ba7"/><circle cx="12" cy="8" r="2" fill="%23df9ba7"/></svg>');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    /* Soft glowing trail */
+    filter: drop-shadow(0 2px 4px rgba(223, 155, 167, 0.6)) drop-shadow(0 0 8px rgba(223, 155, 167, 0.4));
+    /* Start hidden inside the text */
+    transform: translate(-50%, -50%) scale(0.1);
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+    z-index: 20;
+}
+
+/* Hover reveals bees and starts interaction */
+.nav-brand:hover::before,
+.nav-brand:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-brand:hover::before {
+    /* Bee 1: Clockwise orbit + wing flutter */
+    animation: beeOrbit1 3.5s linear infinite, beeFlutter 0.08s ease-in-out infinite alternate;
+}
+
+.nav-brand:hover::after {
+    /* Bee 2: Counter-clockwise orbit (larger) + wing flutter */
+    animation: beeOrbit2 4.2s linear infinite, beeFlutter 0.1s ease-in-out infinite alternate;
+    animation-delay: 0.15s;
+}
+
+/* Organic Orbit Keyframes (Smooth Circular Wobble) */
+@keyframes beeOrbit1 {
+    0% { transform: translate(-50%, -50%) rotate(0deg) translateX(42px) rotate(90deg) translateY(0px); }
+    25% { transform: translate(-50%, -50%) rotate(90deg) translateX(38px) rotate(90deg) translateY(-3px); }
+    50% { transform: translate(-50%, -50%) rotate(180deg) translateX(45px) rotate(90deg) translateY(0px); }
+    75% { transform: translate(-50%, -50%) rotate(270deg) translateX(38px) rotate(90deg) translateY(3px); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) translateX(42px) rotate(90deg) translateY(0px); }
+}
+
+@keyframes beeOrbit2 {
+    0% { transform: translate(-50%, -50%) rotate(180deg) translateX(55px) rotate(-90deg) translateY(0px) scale(0.85); }
+    25% { transform: translate(-50%, -50%) rotate(90deg) translateX(60px) rotate(-90deg) translateY(4px) scale(0.95); }
+    50% { transform: translate(-50%, -50%) rotate(0deg) translateX(50px) rotate(-90deg) translateY(0px) scale(0.85); }
+    75% { transform: translate(-50%, -50%) rotate(-90deg) translateX(60px) rotate(-90deg) translateY(-4px) scale(0.75); }
+    100% { transform: translate(-50%, -50%) rotate(-180deg) translateX(55px) rotate(-90deg) translateY(0px) scale(0.85); }
+}
+
+/* Wing Flutter Effect (Squashing the background simulates flapping) */
+@keyframes beeFlutter {
+    0% { background-size: 100% 100%; }
+    100% { background-size: 70% 100%; }
 }
 
 .nav-links { list-style: none; display: flex; gap: 32px; margin: 0; padding: 0; }
