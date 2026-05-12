@@ -1,18 +1,4 @@
-<script>
-history.scrollRestoration = "manual";
 
-window.addEventListener("load", () => {
-    window.scrollTo(0, 0);
-});
-</script>
-// PREVENT AUTO SCROLL RESTORATION
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-}
-
-window.addEventListener('load', () => {
-    window.scrollTo(0, 0);
-});
 // TICKER OPTIMIZATION
 function optimizeTrack() {
     const track = document.querySelector('.track');
