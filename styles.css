@@ -173,7 +173,11 @@ body {
 
 .container { width: 90%; max-width: 1100px; margin: 0 auto; text-align: center; }
 
-/* --- TICKER --- */
+:root {
+    --gap: 30px;
+    --duration: 25s;
+}
+
 .ticker {
     overflow: hidden;
     width: 100%;
@@ -181,24 +185,31 @@ body {
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
-.track { display: flex; width: max-content; animation: scroll 30s linear infinite; }
-.group { display: flex; align-items: center; gap: 30px; padding-right: 30px; }
+
+.track {
+    display: flex;
+    width: max-content;
+    animation: scroll var(--duration) linear infinite;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    padding-right: var(--gap);
+}
+
 .group span {
     padding: 12px 24px;
     border-radius: 100px;
-    background: var(--bg-light);
-    border: 1px solid rgba(223, 155, 167, 0.3);
-    color: var(--theme-primary);
+    background: rgba(20, 184, 166, 0.05);
+    border: 1px solid rgba(20, 184, 166, 0.2);
+    color: #0F766E;
     white-space: nowrap;
     font-family: "Georgia", serif;
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 0.1rem;
-    transition: var(--transition-smooth);
-}
-.group span:hover {
-    background: var(--theme-primary-light);
-    transform: scale(1.05);
 }
 
 @keyframes scroll {
