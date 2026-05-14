@@ -225,7 +225,7 @@ body {
     text-transform: capitalize;
     background: #fff;
     color: var(--text-main);
-    border: 1px solid transparent;
+    border: border: 1px solid #444;
     transition: var(--transition-smooth);
     cursor: pointer;
     position: relative;
