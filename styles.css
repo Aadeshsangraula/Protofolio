@@ -336,7 +336,7 @@ body {
 .p-services { margin-top: 20px; }
 .p-checkboxes { display: flex; gap: 15px; flex-wrap: wrap; font-family: 'Playfair Display', serif; font-size: 0.9rem; color: var(--text-main); }
 .p-checkboxes label { cursor: pointer; transition: var(--transition-smooth); }
-.p-checkboxes label:hover { color: var(--theme-primary); }
+.p-checkboxes label:hover { color: black; }
 
 .p-btn {
     margin-top: 24px; background: var(--text-heading); color: #fff; padding: 14px 32px; border-radius: 50px;
