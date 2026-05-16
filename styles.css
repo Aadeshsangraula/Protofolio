@@ -315,7 +315,7 @@ body {
 
 .p-card {
     background-color: hsla(39, 17%, 84%, 0.826);
-       width: 100%;
+       width: 500px;
     padding: 80px 20px;
     display: flex;
     justify-content: center;
