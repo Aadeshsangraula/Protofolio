@@ -35,7 +35,7 @@ if (contactForm) {
 
         // Append services into form data
         const formData = new FormData(this);
-        formData.set("service", services);
+        formData.append("services", services);
 
         // UI loading state
         if (btn) {
