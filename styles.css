@@ -175,7 +175,7 @@ body {
 
 :root {
     --gap: 30px;
-    --duration: 6s;
+    --duration: 15s;
 }
 
 .ticker {
