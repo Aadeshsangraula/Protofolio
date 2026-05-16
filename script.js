@@ -15,65 +15,70 @@ window.addEventListener("resize", optimizeTrack);
 
 
 // ===============================
-// EMAILJS SETUP
+// FORM (FORMSPREE HANDLING)
 // ===============================
-
-// Make sure EmailJS library is loaded in HTML:
-// <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-(function () {
-    emailjs.init("D1oslzmJLzK07qjUx");
-})();
-
 const contactForm = document.getElementById("contact-form");
 
 if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
+    contactForm.addEventListener("submit", async function (e) {
         e.preventDefault();
 
         const status = document.getElementById("form-status");
-        const btn = document.querySelector(".p-btn");
+        const btn = this.querySelector(".p-btn");
 
+        // Get checkbox values correctly
         const services = [
-            ...document.querySelectorAll('input[name="service"]:checked')
+            ...document.querySelectorAll('input[name="service[]"]:checked')
         ]
-            .map(cb => cb.value)
-            .join(", ") || "None selected";
+        .map(cb => cb.value)
+        .join(", ") || "None selected";
 
-        // Safety check
+        // Append services into form data
+        const formData = new FormData(this);
+        formData.set("service", services);
+
+        // UI loading state
         if (btn) {
             btn.textContent = "Sending...";
             btn.disabled = true;
         }
 
-        emailjs.send("service_bbums6w", "template_1mj9unj", {
-            name: this.name.value,
-            email: this.email.value,
-            message: this.message.value,
-            services: services
-        })
-            .then(() => {
+        try {
+            const response = await fetch(this.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
                 if (status) {
                     status.textContent = "✅ Message sent successfully!";
                     status.style.color = "#0f766e";
                 }
 
                 this.reset();
-            })
-            .catch((err) => {
-                console.error("EmailJS Error:", err);
-
+            } else {
                 if (status) {
-                    status.textContent = "❌ Error! Please try again.";
+                    status.textContent = "❌ Something went wrong. Try again.";
                     status.style.color = "#c62828";
                 }
-            })
-            .finally(() => {
-                if (btn) {
-                    btn.textContent = "Send Message";
-                    btn.disabled = false;
-                }
-            });
+            }
+
+        } catch (error) {
+            console.error("Formspree Error:", error);
+
+            if (status) {
+                status.textContent = "❌ Network error. Please try again.";
+                status.style.color = "#c62828";
+            }
+        } finally {
+            if (btn) {
+                btn.textContent = "Send Message";
+                btn.disabled = false;
+            }
+        }
     });
 }
 
@@ -112,7 +117,7 @@ if (navbar) {
 
 
 // ===============================
-// SCROLL REVEAL ANIMATIONS
+// SCROLL REVEAL ANIMATION
 // ===============================
 const observerOptions = {
     root: null,
