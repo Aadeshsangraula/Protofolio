@@ -328,7 +328,7 @@ body {
 
 .p-field { margin-bottom: 25px; border-bottom: 1px solid #eee; transition: border-color 0.3s ease; position: relative; }
 .p-field label { font-family: 'Playfair Display', serif; font-style: italic; color: #888; font-size: 0.9rem; display: block; margin-bottom: 8px; transition: var(--transition-smooth);}
-.p-field input, .p-field textarea { width: 100%; border: none; padding: 12px 0; background: transparent; outline: none; font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--text-heading); letter-spacing: 0.5px; }
+.p-field input, .p-field textarea { width: 100%; border: none; padding: 12px 0; background: transparent; outline: none; font-family: 'Playfair Display', serif; font-size: 1rem; color: black; letter-spacing: 0.5px; }
 .p-field input::placeholder, .p-field textarea::placeholder { color: #ccc; font-style: italic; }
 .p-field:focus-within { border-bottom-color: var(--theme-primary) !important; }
 .p-field:focus-within label { color: var(--theme-primary); }
