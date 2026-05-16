@@ -26,24 +26,15 @@ if (contactForm) {
         const status = document.getElementById("form-status");
         const btn = this.querySelector(".p-btn");
 
-        // Get checkbox values correctly
-        const services = [
-            ...document.querySelectorAll('input[name="service[]"]:checked')
-        ]
-        .map(cb => cb.value)
-        .join(", ") || "None selected";
-
-        // Append services into form data
-        const formData = new FormData(this);
-        formData.append("services", services);
-
-        // UI loading state
+        // UI loading
         if (btn) {
             btn.textContent = "Sending...";
             btn.disabled = true;
         }
 
         try {
+            const formData = new FormData(this);
+
             const response = await fetch(this.action, {
                 method: "POST",
                 body: formData,
@@ -53,31 +44,24 @@ if (contactForm) {
             });
 
             if (response.ok) {
-                if (status) {
-                    status.textContent = "✅ Message sent successfully!";
-                    status.style.color = "#0f766e";
-                }
-
+                status.textContent = "✅ Message sent successfully!";
+                status.style.color = "#0f766e";
                 this.reset();
             } else {
-                if (status) {
-                    status.textContent = "❌ Something went wrong. Try again.";
-                    status.style.color = "#c62828";
-                }
+                status.textContent = "❌ Something went wrong. Try again.";
+                status.style.color = "#c62828";
             }
 
         } catch (error) {
             console.error("Formspree Error:", error);
+            status.textContent = "❌ Network error. Please try again.";
+            status.style.color = "#c62828";
+        }
 
-            if (status) {
-                status.textContent = "❌ Network error. Please try again.";
-                status.style.color = "#c62828";
-            }
-        } finally {
-            if (btn) {
-                btn.textContent = "Send Message";
-                btn.disabled = false;
-            }
+        // reset button
+        if (btn) {
+            btn.textContent = "Send Message";
+            btn.disabled = false;
         }
     });
 }
