@@ -362,7 +362,7 @@ body {
 }
 .sb-footer-container { max-width: 900px; margin: 0 auto; width: 100%; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
 .sb-footer-brand p, .sb-footer-links, .sb-footer-copy { margin: 0; }
-.sb-footer-name { font-size: 1.25rem; line-height: 1; letter-spacing: 0.9px; font-family: 'Parisienne', cursive; color: var(--text-heading); }
+.sb-footer-name { font-size: 1.25rem; line-height: 1; letter-spacing: 0.9px; font-family: 'Parisienne', cursive; color: white; }
 .sb-dot { color: var(--theme-primary); }
 .sb-footer-tagline { font-style: italic; color: #888; margin-top: 5px !important; font-size: 0.85rem; }
 .sb-footer-links { list-style: none; display: flex; gap: 20px; padding: 0; }
