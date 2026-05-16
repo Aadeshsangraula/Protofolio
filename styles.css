@@ -313,7 +313,7 @@ body {
 .p-contact-sub a:hover { color: #c9828f; }
 
 .p-card {
-    background-color: #f5f5f5;
+    background-color: hsla(39, 17%, 84%, 0.826);
     width: 100%; max-width: 600px; padding: 50px; border-radius: 24px;
     display: grid; grid-template-columns: 1fr; gap: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.03);
     margin: 0 auto; border: 1px solid var(--theme-primary-light);
@@ -352,10 +352,10 @@ body {
 /* --- FOOTER --- */
 .sb-portfolio-footer { 
     width: 100%; 
-    background-color: var(--bg-light); 
+    background-color: hsl(0, 3%, 12%); 
     padding: 30px 0 20px 0; 
-    color: var(--text-main); 
-    border-top: 1px solid var(--theme-primary-light); 
+    color:#ffffff; 
+    border-top: 1px solid #1a1a1a;; 
     box-sizing: border-box; 
     font-family: 'Playfair Display', serif; 
 }
