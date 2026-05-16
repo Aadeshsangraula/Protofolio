@@ -364,9 +364,9 @@ body {
 .sb-footer-brand p, .sb-footer-links, .sb-footer-copy { margin: 0; }
 .sb-footer-name { font-size: 1.25rem; line-height: 1; letter-spacing: 0.9px; font-family: 'Parisienne', cursive; color: white; }
 .sb-dot { color: var(--theme-primary); }
-.sb-footer-tagline { font-style: italic; color: #888; margin-top: 5px !important; font-size: 0.85rem; }
+.sb-footer-tagline { font-style: italic; color: white; margin-top: 5px !important; font-size: 0.85rem; }
 .sb-footer-links { list-style: none; display: flex; gap: 20px; padding: 0; }
-.sb-footer-links a { text-decoration: none; color: #888; font-size: 0.95rem; transition: var(--transition-smooth); font-style: italic; display: inline-block;}
+.sb-footer-links a { text-decoration: none; color: white; font-size: 0.95rem; transition: var(--transition-smooth); font-style: italic; display: inline-block;}
 .sb-footer-links a:hover { color: var(--theme-primary); transform: translateY(-2px); }
 .sb-footer-copy { color: #888; font-size: 0.85rem; margin-top: 5px; font-style: italic;}
 
