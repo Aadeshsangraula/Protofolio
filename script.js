@@ -17,13 +17,16 @@ window.addEventListener("resize", optimizeTrack);
 // ===============================
 // FORM (FORMSPREE HANDLING)
 // ===============================
+// ===============================
+// FORM (FORMSPREE HANDLING)
+// ===============================
 const contactForm = document.getElementById("contact-form");
+const status = document.getElementById("form-status");
 
-if (contactForm) {
+if (contactForm && status) {
     contactForm.addEventListener("submit", async function (e) {
         e.preventDefault();
 
-        const status = document.getElementById("form-status");
         const btn = this.querySelector(".p-btn");
 
         // UI loading
@@ -43,6 +46,11 @@ if (contactForm) {
                 }
             });
 
+            // Ensure clean formatting for the feedback text
+            status.style.fontFamily = "sans-serif";
+            status.style.fontSize = "0.95rem";
+            status.style.fontWeight = "500";
+
             if (response.ok) {
                 status.textContent = "✅ Message sent successfully!";
                 status.style.color = "#0f766e";
@@ -54,6 +62,9 @@ if (contactForm) {
 
         } catch (error) {
             console.error("Formspree Error:", error);
+            status.style.fontFamily = "sans-serif";
+            status.style.fontSize = "0.95rem";
+            status.style.fontWeight = "500";
             status.textContent = "❌ Network error. Please try again.";
             status.style.color = "#c62828";
         }
