@@ -374,7 +374,7 @@ body {
 .sb-social-icons a { color: #bfa1a6; font-size: 1.1rem; transition: var(--transition-smooth) !important; display: inline-block;}
 .sb-social-icons a:hover { color: var(--theme-primary) !important; transform: translateY(-4px) !important; }
 
-.sb-footer-mail { color: #888; text-decoration: none; font-style: italic; font-size: 0.95rem; transition: var(--transition-smooth); }
+.sb-footer-mail { color:white; text-decoration: none; font-style: italic; font-size: 0.95rem; transition: var(--transition-smooth); }
 .sb-footer-mail:hover { color: var(--theme-primary); }
 
 /* --- ORIGINAL SCROLL REVEAL --- */
