@@ -315,7 +315,11 @@ body {
 
 .p-card {
     background-color: hsla(39, 17%, 84%, 0.826);
-    width: 100%; max-width: 600px; padding: 50px; border-radius: 24px;
+       width: 100%;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #fdfaf500;
     display: grid; grid-template-columns: 1fr; gap: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.03);
     margin: 0 auto; border: 1px solid var(--theme-primary-light);
     transition: var(--transition-smooth);
